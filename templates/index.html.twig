@@ -1,0 +1,13 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Hello DefaultController!{% endblock %}
+
+{% block body %}
+
+<div class="example-wrapper">
+    <h1>Hello ! ✅</h1>
+    {% if app.user %}
+        <h4>{{ app.user.email }}</h4>
+    {% endif %}
+</div>
+{% endblock %}

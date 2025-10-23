@@ -1,0 +1,83 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Tableau de bord{% endblock %}
+
+{% block body %}
+
+<div class="example-wrapper">
+    <h1>Tableau de bord ! ✅</h1>
+    <h4>{{ app.user.email }}</h4>
+    <h4>Stratégie de contenu</h4>
+    <ul>
+        <li>Type de post : Conseils sur la création de contenu</li>
+        <li>Rythme de publication reels : Mardi, Jeudi, Samedi</li>
+        <li>Rythme de publication story : Mercredi, Vendredi, Dimanche</li>
+        <li>Rythme de publication post : Mercredi, Dimanche</li>
+    </ul>
+    <h4>Analyser la concurrence</h4>
+    <ul>
+        <li><a href="">Nom Compte 1 - Note</a></li>
+        <li><a href="">Nom Compte 2 - Note</a></li>
+        <li><a href="">Nom Compte 3 - Note</a></li>
+        <li><a href="">Nom Compte 4 - Note</a></li>
+        <li><a href="">Nom Compte 5 - Note</a></li>
+        <li><a href="">Nom Compte 6 - Note</a></li>
+        <li><a href="">Nom Compte 7 - Note</a></li>
+        <li><a href="">Nom Compte 8 - Note</a></li>
+        <li><a href="">Nom Compte 9 - Note</a></li>
+        <li><a href="">Nom Compte 10 - Note</a></li>
+    </ul>
+    <h4>Inspiration (Idées de contenus)</h4>
+    <button>Ajouter une idée de vidéo</button>
+    <table>
+        <thead>
+            <tr>
+                <th>+ Etape</th>
+                <th>!! Accroche</th>
+                <th>+ Plateforme</th>
+                <th>/ Lien</th>
+                <th>+ Étiquettes</th>
+                <th>Commentaires</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+            </tr>
+        </tbody>
+    </table>
+    <h4>Stats des publications (Une fois par mois)</h4>
+    <button>Ajouter une vidéo</button>
+    <table>
+        <thead>
+            <tr>
+                <th>Accroche</th>
+                <th>Script</th>
+                <th>Lien</th>
+                <th>Vue</th>
+                <th>Likes</th>
+                <th>Commentaires</th>
+                <th>Enregistrements</th>
+                <th>Durée de la vidéo</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>ABC</td>
+                <td>DEF</td>
+                <td><a href="">Lien de la vidéo</a></td>
+                <td>5599</td>
+                <td>886</td>
+                <td>98</td>
+                <td>45</td>
+                <td>1 min</td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+{% endblock %}

@@ -1,0 +1,39 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Competitor index{% endblock %}
+
+{% block body %}
+    <h1>Competitor index</h1>
+
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Name</th>
+                <th>Description</th>
+                <th>Link</th>
+                <th>actions</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for competitor in competitors %}
+            <tr>
+                <td>{{ competitor.id }}</td>
+                <td>{{ competitor.name }}</td>
+                <td>{{ competitor.description }}</td>
+                <td>{{ competitor.link }}</td>
+                <td>
+                    <a href="{{ path('app_competitor_show', {'id': competitor.id}) }}">show</a>
+                    <a href="{{ path('app_competitor_edit', {'id': competitor.id}) }}">edit</a>
+                </td>
+            </tr>
+        {% else %}
+            <tr>
+                <td colspan="5">no records found</td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+    <a href="{{ path('app_competitor_new') }}">Create new</a>
+{% endblock %}

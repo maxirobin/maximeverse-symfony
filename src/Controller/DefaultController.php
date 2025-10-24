@@ -5,6 +5,7 @@ namespace App\Controller;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Attribute\Route;
+use App\Repository\CompetitorRepository;
 
 final class DefaultController extends AbstractController
 {
@@ -15,8 +16,10 @@ final class DefaultController extends AbstractController
     }
 
     #[Route('/dashboard', name: 'dashboard')]
-    public function dashboard(): Response
+    public function dashboard(CompetitorRepository $competitorRepository): Response
     {
-        return $this->render('dashboard.html.twig');
+        return $this->render('dashboard.html.twig', [
+            'competitors' => $competitorRepository->findBy(['user'=>$this->getUser()]),
+        ]);
     }
 }

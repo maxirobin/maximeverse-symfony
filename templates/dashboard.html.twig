@@ -15,17 +15,15 @@
         <li>Rythme de publication post : Mercredi, Dimanche</li>
     </ul>
     <h4>Analyser la concurrence</h4>
+    <a href="{{ path("app_competitor_new") }}"><button>Ajouter un concurrent</button></a>
     <ul>
-        <li><a href="">Nom Compte 1 - Note</a></li>
-        <li><a href="">Nom Compte 2 - Note</a></li>
-        <li><a href="">Nom Compte 3 - Note</a></li>
-        <li><a href="">Nom Compte 4 - Note</a></li>
-        <li><a href="">Nom Compte 5 - Note</a></li>
-        <li><a href="">Nom Compte 6 - Note</a></li>
-        <li><a href="">Nom Compte 7 - Note</a></li>
-        <li><a href="">Nom Compte 8 - Note</a></li>
-        <li><a href="">Nom Compte 9 - Note</a></li>
-        <li><a href="">Nom Compte 10 - Note</a></li>
+        {% for competitor in competitors %}
+            <li><a href="{{ competitor.link }}" target="_blank">{{ competitor.name }} - {{ competitor.description }}</a></li>
+            <!--<a href="{{ path('app_competitor_show', {'id': competitor.id}) }}">show</a>
+            <a href="{{ path('app_competitor_edit', {'id': competitor.id}) }}">edit</a>-->
+        {% else %}
+            <li>Aucun concurrent trouvé.</li>
+        {% endfor %}
     </ul>
     <h4>Inspiration (Idées de contenus)</h4>
     <button>Ajouter une idée de vidéo</button>

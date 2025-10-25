@@ -18,9 +18,7 @@
     <a href="{{ path("app_competitor_new") }}"><button>Ajouter un concurrent</button></a>
     <ul>
         {% for competitor in competitors %}
-            <li><a href="{{ competitor.link }}" target="_blank">{{ competitor.name }} - {{ competitor.description }}</a></li>
-            <!--<a href="{{ path('app_competitor_show', {'id': competitor.id}) }}">show</a>
-            <a href="{{ path('app_competitor_edit', {'id': competitor.id}) }}">edit</a>-->
+            <li><a href="{{ competitor.link }}" target="_blank">{{ competitor.name }} - {{ competitor.description }}</a><a href="{{ path('app_competitor_edit', {'id': competitor.id}) }}">edit</a></li>
         {% else %}
             <li>Aucun concurrent trouvé.</li>
         {% endfor %}
